@@ -30,15 +30,4 @@ public enum RejectReason {
     EC_InvalidSymbolStatus,
     UNKNOWN;
 
-    @JsonCreator
-    public static RejectReason fromString(String value) {
-        if (value == null || value.trim().isEmpty()) {
-            return UNKNOWN;
-        }
-        try {
-            return RejectReason.valueOf(value.toUpperCase());
-        } catch (IllegalArgumentException e) {
-            return UNKNOWN;
-        }
-    }
 }

@@ -17,7 +17,7 @@ public class PositionData {
     private String positionValue;
     private Integer riskId;
     private String riskLimitValue;
-    private String entryPrice;
+    private String avgPrice;
     private String markPrice;
     private String leverage;
     private String positionBalance;

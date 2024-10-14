@@ -18,18 +18,14 @@ public enum CategoryType {
     CategoryType(String categoryTypeId) {
         this.categoryTypeId = categoryTypeId;
     }
-/*    @JsonValue
-    public String getCategoryTypeId() {
-        return categoryTypeId;
-    }
 
     @JsonCreator
     public static CategoryType forValue(String value) {
         for (CategoryType categoryType : values()) {
-            if (categoryType.getCategoryTypeId().equalsIgnoreCase(value)) {
+            if (categoryType.getCategoryTypeId().equals(value)) {
                 return categoryType;
             }
         }
         throw new IllegalArgumentException("Unknown category type: " + value);
-    }*/
+    }
 }

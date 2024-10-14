@@ -1,5 +1,7 @@
 package com.bybit.api.client.domain.trade;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 
 @Getter
@@ -17,5 +19,15 @@ public enum StopOrderType {
 
     StopOrderType(String description) {
         this.description = description;
+    }
+
+    @JsonCreator
+    public static StopOrderType fromString(String value) {
+        for (StopOrderType stopOrderType : StopOrderType.values()) {
+            if(stopOrderType.description.equals(value)) {
+                return stopOrderType;
+            }
+        }
+        return null;
     }
 }

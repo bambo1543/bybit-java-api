@@ -16,4 +16,14 @@ public enum PositionIdx {
     PositionIdx(int index) {
         this.index = index;
     }
+
+    public static PositionIdx fromIndex(int index) {
+        for (PositionIdx positionIdx : PositionIdx.values()) {
+            if (positionIdx.getIndex() == index) {
+                return positionIdx;
+            }
+        }
+        return null;
+    }
+
 }

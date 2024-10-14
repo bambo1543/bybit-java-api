@@ -1,5 +1,6 @@
 package com.bybit.api.client.domain.trade;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import lombok.Getter;
 
 /**
@@ -17,4 +18,15 @@ public enum SmpType {
     SmpType(String description) {
         this.description = description;
     }
+
+    @JsonCreator
+    public static SmpType fromString(String value) {
+        for (SmpType type : SmpType.values()) {
+            if(type.description.equals(value)) {
+                return type;
+            }
+        }
+        return null;
+    }
+
 }
